@@ -60,26 +60,26 @@ while True:
         break
 
     else:
+        print("Risposta corretta")
         punti = punti + 1
         difficoltà = difficoltà + 1
 
 with open("punti.txt", "r") as file:
-    linee_02 = file.readlines()
-    for linea in linee_02:
-        parola = linea.split()
+    contenuto = file.read()
+    parole = contenuto.split()
 
 giocatori = []
 
-for i in range(0, len(parola), 2):
-    giocatori.append(Player(parola[i], parola[i+1]))
+for i in range(0, len(parole), 2):
+    giocatori.append(Player(parole[i], parole[i+1]))
 
 giocatori.append(Player(nome, punti))
-print(giocatori)
 
 giocatori.sort(key=lambda x: int(x.punteggio), reverse = True)
 
+print(f'Classifica finale visualizzabile anche nel file punti.txt')
+
 with open("punti.txt", "w") as file:
     for giocatore in giocatori:
-        n = giocatore.nickname
-        p = giocatore.punteggio
-        file.write(n + ' ' + str(p) + '\n')
+        file.write(f'{giocatore.nickname} {giocatore.punteggio}\n')
+        print(f'{giocatore.nickname} {giocatore.punteggio}')
