@@ -89,7 +89,7 @@ while True:
     # punti di un'unità che il livello di difficoltà
 
     else:
-        print("Risposta corretta")
+        print("Risposta corretta!")
         punti = punti + 1
         difficoltà = difficoltà + 1
 

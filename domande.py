@@ -19,7 +19,7 @@ class Domanda:
     def __repr__(self):
         return f'{self.domanda} {self.livello} {self.corretta} {self.risposte}'
 
-    # Creare il metodo __str__ usato soltanto per fare la print e controllare la corretta del codice scritto nel
+    # Creare il metodo __str__ usato soltanto per fare la print e controllare la correttezza del codice scritto nel
     # main
     def __str__(self):
         return f'{self.corretta}'
